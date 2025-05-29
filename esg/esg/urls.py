@@ -14,11 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# esg/urls.py
-from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import CompanyViewSet, BusinessUnitViewSet, MetricViewSet, MetricValueViewSet
+
+router = DefaultRouter()
+router.register(r'companies', CompanyViewSet)
+router.register(r'business-units', BusinessUnitViewSet)
+router.register(r'metrics', MetricViewSet)
+router.register(r'metric-values', MetricValueViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('breathesg.urls')),  # ← Include your app's URLs here
+    path('api/', include(router.urls)),
 ]

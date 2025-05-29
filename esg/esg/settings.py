@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'rest_framework',
+     'breathesg',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +85,9 @@ DATABASES = {
         'PASSWORD': 'Aishuuuuu',
         'HOST': 'localhost',
         'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=esg'
+        }
     }
 }
 

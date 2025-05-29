@@ -3,7 +3,7 @@ from django.db import models
 class Company(models.Model):
     SECTOR_CHOICES = [
         ('Energy', 'Energy'),
-        ('Finance', 'Finance'),n
+        ('Finance', 'Finance'),
         
         ('Tech', 'Technology'),
         ('Healthcare', 'Healthcare'),
