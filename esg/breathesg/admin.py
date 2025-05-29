@@ -25,3 +25,4 @@ class MetricValueAdmin(admin.ModelAdmin):
     search_fields = ('metric__name', 'business_unit__name')
     list_filter = ('reporting_period', 'metric__category')
 
+``
